@@ -5,16 +5,18 @@ $data= new data();
 
 $params=$_POST;
 $params["id_usuario"] = $_SESSION["id_usuario"];
-$params["accion"] = 'Se creo una marca con el nombre: '. $params["txtMarca"].'';
+$params["accion"] = 'Se agrego un nuevo proveedor '. $params["txtNombre"].'';
 
-$sql = "SELECT marca FROM marca WHERE marca=:txtMarca";
-$parametros = array("txtMarca");
+$sql = "SELECT nombre FROM proveedor WHERE codigo=:txtApellido AND dui=:txtDui AND NIT=:txtNit AND ncr=:txtNcr";
+$parametros = array("txtApellido","txtDui","txtNit","txtNcr");
 $result = $data->query($sql, $params, $parametros);
+
+
 if ($result['total'] > 0) {
-    $response = array('success'=>false, 'titulo'=>'Verifique su información!', 'mensaje'=>'Esta marca ya existe');
+    $response = array('success'=>false, 'titulo'=>'Verifique su información!', 'mensaje'=>'Ya existe un proveedor con este codigo');
 } else {
-	$sql = "INSERT INTO marca (marca, fecha_creacion, estado) VALUES (:txtMarca, NOW(), 1)";
-	$param_list = array("txtMarca");
+	$sql = "INSERT INTO proveedor (codigo, nombre, apellido, dui, nit, ncr, direccion, email) VALUES (:txtcodigo, :txtNombre, :txtApellido, :txtDui, :txtNit, :txtNcr, :txtEmail)";
+	$param_list = array("txtcodigo", "txtNombre", "txtApellido", "txtDui", "txtNit","txtNcr", "txtEmail");
 	$response = $data->query($sql, $params, $param_list, true);
 
 
@@ -30,5 +32,6 @@ if ($result['total'] > 0) {
 	}
 
  }
+
 echo json_encode($response);
 ?>

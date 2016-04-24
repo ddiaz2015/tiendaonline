@@ -7,7 +7,7 @@ class connDB {
     var $Password_MySQL;
 
     function connDB() {
-        $this->DB_MySQL = "tienda";
+        $this->DB_MySQL = "variedades_jaqueline";
         $this->Server_MySQL = "localhost";
         $this->User_MySQL = "root";
         $this->Password_MySQL = "admin";

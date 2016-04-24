@@ -105,6 +105,7 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
+<script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- Bootstrap 3.3.5 -->

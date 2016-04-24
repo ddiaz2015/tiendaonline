@@ -13,7 +13,7 @@ if ($params["txtusuario"] === "" || $params["txtusuario"] === null || trim($para
     $response=array('success'=>false, 'titulo'=>'Verifique su información!', 'mensaje'=>'Llene correctamente los campos');          
 
 } else {
-    $sql="SELECT usuario.estado, usuario.usuario, usuario.id_usuario, usuario.id_rol, usuario.cargo FROM tienda.usuario WHERE usuario.usuario=:txtusuario AND usuario.contrasenia=md5(:txtpassword) AND usuario.estado='Activo'";
+    $sql="SELECT usuario.estado, usuario.usuario, usuario.id_usuario, usuario.id_rol, usuario.cargo FROM variedades_jaqueline.usuario WHERE usuario.usuario=:txtusuario AND usuario.contrasenia=md5(:txtpassword) AND usuario.estado='Activo'";
     $param_list = array("txtusuario", "txtpassword");
     $response = $data->query($sql, $params, $param_list);
     if ($response["total"] > 0) {

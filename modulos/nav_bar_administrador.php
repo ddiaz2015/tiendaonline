@@ -38,26 +38,25 @@
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-laptop"></i>
+          <i class="fa fa-archive"></i>
           <span>Productos</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">        
-        <li><a href="pages/UI/general.html"><i class="fa fa-tags text-green"></i> Agregar productos</a></li>
+        <li><a href="?mod=nuevo_producto"><i class="fa fa-plus-circle text-green"></i> Agregar productos</a></li>
           <li><a href="?mod=crear_marca"><i class="fa fa-tags text-green"></i> Administrar marca</a></li>
-          <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o text-green"></i> Administrar linea</a></li>
+          <li><a href="?mod=tipo_producto"><i class="fa fa-list text-green"></i> Tipo producto</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Forms</span>
+          <i class="fa fa-truck"></i> <span>Proveedor</span>
           <i class="fa fa-angle-left pull-right"></i>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-        </ul>
+          <li><a href="pages/forms/general.html"><i class="fa fa-truck text-green"></i> Proveedores</a></li>
+          <li><a href="?mod=nuevo_proveedor"><i class="fa fa-plus-circle text-green"></i> Agregar proveedor</a></li>
+       </ul>
       </li>
       <li class="treeview">
         <a href="#">

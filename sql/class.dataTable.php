@@ -55,5 +55,28 @@ class dataTable {
         unset($query);
     }
 
+       function obtener_tipo_producto() { 
+        $managerDB = new managerDB(); 
+        $connection = $managerDB->conectar("mysql"); 
+        if ($connection!=null) {
+            $response=array('success'=>true);
+            $sql = "SELECT id_tipo_producto, tipo, estado FROM tipo_producto";
+            try {
+                $query=$connection->prepare($sql);
+                $query->execute();
+                $response['items']=$query->fetchAll(PDO::FETCH_ASSOC);
+                $response['total']=$query->rowCount();
+            } catch(PDOException $error) { 
+                if ($transaction) $connection->rollback();
+                $response= array('success'=>false, 'error'=>$error->getMessage());
+            }
+        } else {
+            $response= array('success'=>false, 'error'=>'No está conectado al servidor de bases de datos.');
+        }
+        return $response;
+        unset($connection);
+        unset($query);
+    }
+
   }
 ?>
